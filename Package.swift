@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "SideMenu",
+    platforms: [
+        .iOS(.v11) 
+    ],
     products: [
         .library(name: "SideMenu",  targets: ["SideMenu"])
     ],
