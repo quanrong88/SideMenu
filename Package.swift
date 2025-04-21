@@ -1,19 +1,27 @@
-// swift-tools-version:5.0
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
     name: "SideMenu",
     platforms: [
-        .iOS(.v11) 
+        .iOS(.v11) // or whatever your minimum iOS version is
     ],
     products: [
-        .library(name: "SideMenu",  targets: ["SideMenu"])
+        .library(
+            name: "SideMenu",
+            targets: ["SideMenu"]
+        )
     ],
     dependencies: [],
     targets: [
-        .target(name: "SideMenu", path: "Pod/Classes")
+        .target(
+            name: "SideMenu",
+            path: "Pod/Classes",
+            swiftSettings: [
+                .define("SWIFT_PACKAGE")
+            ]
+        )
     ],
     swiftLanguageVersions: [.v4_2, .v5]
 )
+
